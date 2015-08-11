@@ -20,9 +20,10 @@ public class HibernateTest {
 		Session session = sessionfactory.openSession();
 		session.beginTransaction();
 		
-		String hql = ("from UzytkownikDane");
+		
+		String hql = ("select userName from UzytkownikDane");
 		Query query = session.createQuery(hql);
-		List<UzytkownikDane> uzytkownicy = (List<UzytkownikDane>) query.list();
+		List<String> uzytkownicy = (List<String>) query.list();
 		
 		//session.save(dane);
 		session.getTransaction().commit();
@@ -30,7 +31,7 @@ public class HibernateTest {
 		session.close();
 		sessionfactory.close();
 		
-		for(UzytkownikDane u : uzytkownicy)
-			System.out.println("Uzytkownicy: " +u.getUserName());
+		for(String u : uzytkownicy)
+			System.out.println("Uzytkownicy: " +u);
 	}
 }

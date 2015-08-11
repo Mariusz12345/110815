@@ -35,6 +35,4 @@ public class UzytkownikDane {
 		this.userName = userName;
 	}
 	
-	
-	
 }
