@@ -21,8 +21,7 @@ public class HibernateTest {
 		session.beginTransaction();
 		
 		
-		String hql = ("select userName from UzytkownikDane");
-		Query query = session.createQuery(hql);
+		Query query = session.createQuery("select userName from UzytkownikDane");
 		List<String> uzytkownicy = (List<String>) query.list();
 		
 		//session.save(dane);
