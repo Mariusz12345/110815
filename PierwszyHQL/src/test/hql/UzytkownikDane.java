@@ -1,8 +1,9 @@
 package test.hql;
 
-import java.util.Date;
+
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,26 +16,16 @@ import javax.persistence.Table;
 public class UzytkownikDane {
 	
 	@Id
-	@SequenceGenerator(name = "userName_seq", sequenceName = "test7.userName_seq")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "userName_seq")
-	private int userID;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long userID;
 	
 	@Column(name ="UserName")
 	private String userName;
-	
-	@Column(name = "DataDolaczenia")
-	private Date dataDolaczenia;
-	
-	public Date getDataDolaczenia() {
-		return dataDolaczenia;
-	}
-	public void setDataDolaczenia(Date dataDolaczenia) {
-		this.dataDolaczenia = dataDolaczenia;
-	}
-	public int getUserID() {
+
+	public Long getUserID() {
 		return userID;
 	}
-	public void setUserID(int userID) {
+	public void setUserID(Long userID) {
 		this.userID = userID;
 	}
 	public String getUserName() {
@@ -43,4 +34,7 @@ public class UzytkownikDane {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
+	
+	
+	
 }
