@@ -1,6 +1,5 @@
 package test.hql;
 
-import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -19,9 +18,12 @@ public class HibernateTest {
 		SessionFactory sessionfactory = new Configuration().configure().buildSessionFactory();
 		Session session = sessionfactory.openSession();
 		session.beginTransaction();
+		int minimalnyUser =3;
 		
 		
-		Query query = session.createQuery("select userName from UzytkownikDane");
+		//Query query = session.createQuery("select userName from UzytkownikDane where userID >"+minimalnyUser);
+		Query query = session.getNamedQuery("Uzytkownicy");
+
 		List<String> uzytkownicy = (List<String>) query.list();
 		
 		//session.save(dane);

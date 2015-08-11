@@ -3,15 +3,15 @@ package test.hql;
 
 
 import javax.persistence.Column;
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
+@NamedQuery(name = "Uzytkownicy",query ="select userName from UzytkownikDane")
 @Table(name="DaneUzytkownika",schema = "test7")
 public class UzytkownikDane {
 	
