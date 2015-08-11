@@ -3,7 +3,6 @@ package test.hql;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Entity;
 
@@ -15,7 +14,6 @@ public class Samochod {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long idSamochodu;
 	private String nazwaSamochodu;
-	
 	
 	public Long getIdSamochodu() {
 		return idSamochodu;

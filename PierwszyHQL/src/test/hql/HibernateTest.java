@@ -13,10 +13,10 @@ public class HibernateTest {
 	public static void main(String[] args) {
 		
 		UzytkownikDane dane = new UzytkownikDane();
-		dane.setUserName("Celina");
+		dane.setUserName("Alicja");
 		
 		Samochod samochod = new Samochod();
-		samochod.setNazwaSamochodu("Fiat");
+		samochod.setNazwaSamochodu("Ford");
 		
 		dane.setSamochod(samochod);
 		
@@ -26,25 +26,49 @@ public class HibernateTest {
 		
 		session.beginTransaction();
 		
-		int minimalnyUser =3;
+		int minimalnyUser = 20;
+		
 		
 		//Klazule select i where
-		Query query = session.createQuery("select userName from UzytkownikDane where userID >"+minimalnyUser);
+		//Query query = session.createQuery("select userName from UzytkownikDane where userID >"+minimalnyUser);
+		//Query query = session.createQuery("select nazwaSamochodu from Samochod ");
 		//Query query = session.getNamedQuery("Uzytkownicy");
+		//Query query = session.createQuery("from UzytkownikDane ");
 		
 		//Klazula order by
-		//		Query query = session.createQuery("select userName from UzytkownikDane order by userName.userName  ");
-
-		List<String> uzytkownicy = (List<String>) query.list();
+		//Query query = session.createQuery("select userName from UzytkownikDane order by userName.userName  ");
 		
-		session.save(samochod);
-		session.save(dane);
+		//klazula group by
+		
+		
+		
+		
+		//Klazula Update
+//		Query query = session.createQuery("update UzytkownikDane set userName=:newNAme where userName=:userName");
+//		query.setString("userName", "Alicja");
+//		query.setString("newNAme", "zmian");
+//		 query.executeUpdate();
+		
+		
+		//List<UzytkownikDane> uzyDane = (List<UzytkownikDane>) query.list();
+		
+		//List<String> zapisDoListy = (List<String>) query.list();
+		
+		//session.save(samochod);
+		//session.save(dane);
 		session.getTransaction().commit();
-				
+		//odzyskywanie obiektu za pomoca session.get
+		
+		
 		session.close();
 		sessionfactory.close();
+		//odzyskywanie obiektu za pomoca session.get
+				
+		//for(String u : zapisDoListy)
+		//System.out.println("Uzytkownicy: " +u);
 		
-		for(String u : uzytkownicy)
-			System.out.println("Uzytkownicy: " +u);
+		
+		//for(UzytkownikDane d : uzyDane)
+		//System.out.println("Uzytkownicy : " + d.getUserName());
 	}
 }

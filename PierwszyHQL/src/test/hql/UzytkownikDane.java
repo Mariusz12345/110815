@@ -1,9 +1,4 @@
 package test.hql;
-
-
-
-
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,9 +25,6 @@ public class UzytkownikDane {
 	@JoinColumn(name = "idSamochodu")
 	private Samochod samochod;
 	
-	
-	
-	
 	public Samochod getSamochod() {
 		return samochod;
 	}
@@ -51,5 +43,4 @@ public class UzytkownikDane {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	
 }
