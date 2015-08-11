@@ -16,16 +16,10 @@ public class Samochod {
 	private Long idSamochodu;
 	private String nazwaSamochodu;
 	
-	@ManyToOne
-	private UzytkownikDane uzytkownik;
 	
 	
-	public UzytkownikDane getUzytkownik() {
-		return uzytkownik;
-	}
-	public void setUzytkownik(UzytkownikDane uzytkownik) {
-		this.uzytkownik = uzytkownik;
-	}
+	
+	
 	public Long getIdSamochodu() {
 		return idSamochodu;
 	}
