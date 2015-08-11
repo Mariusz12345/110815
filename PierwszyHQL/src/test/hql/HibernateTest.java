@@ -29,25 +29,22 @@ public class HibernateTest {
 		int minimalnyUser = 20;
 		
 		
-		//Klazule select i where
+		// select i where
 		//Query query = session.createQuery("select userName from UzytkownikDane where userID >"+minimalnyUser);
 		//Query query = session.createQuery("select nazwaSamochodu from Samochod ");
 		//Query query = session.getNamedQuery("Uzytkownicy");
 		//Query query = session.createQuery("from UzytkownikDane ");
 		
-		//Klazula order by
+		// order by
 		//Query query = session.createQuery("select userName from UzytkownikDane order by userName.userName  ");
 		
-		//klazula group by
+		// Update
+		//Query query = session.createQuery("update UzytkownikDane set userName=:newNAme where userName=:userName");
+		//query.setString("userName", "Alicja");
+		//query.setString("newNAme", "zmian");
+		 //query.executeUpdate();
 		
 		
-		
-		
-		//Klazula Update
-//		Query query = session.createQuery("update UzytkownikDane set userName=:newNAme where userName=:userName");
-//		query.setString("userName", "Alicja");
-//		query.setString("newNAme", "zmian");
-//		 query.executeUpdate();
 		
 		
 		//List<UzytkownikDane> uzyDane = (List<UzytkownikDane>) query.list();
@@ -57,12 +54,10 @@ public class HibernateTest {
 		//session.save(samochod);
 		//session.save(dane);
 		session.getTransaction().commit();
-		//odzyskywanie obiektu za pomoca session.get
 		
 		
 		session.close();
 		sessionfactory.close();
-		//odzyskywanie obiektu za pomoca session.get
 				
 		//for(String u : zapisDoListy)
 		//System.out.println("Uzytkownicy: " +u);
