@@ -31,6 +31,8 @@ public class UzytkownikDane {
 	private Samochod samochod;
 	
 	
+	
+	
 	public Samochod getSamochod() {
 		return samochod;
 	}

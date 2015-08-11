@@ -17,9 +17,6 @@ public class Samochod {
 	private String nazwaSamochodu;
 	
 	
-	
-	
-	
 	public Long getIdSamochodu() {
 		return idSamochodu;
 	}

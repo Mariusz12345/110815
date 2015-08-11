@@ -13,7 +13,7 @@ public class HibernateTest {
 	public static void main(String[] args) {
 		
 		UzytkownikDane dane = new UzytkownikDane();
-		dane.setUserName("Paulina");
+		dane.setUserName("Celina");
 		
 		Samochod samochod = new Samochod();
 		samochod.setNazwaSamochodu("Fiat");
@@ -26,11 +26,14 @@ public class HibernateTest {
 		
 		session.beginTransaction();
 		
-		//int minimalnyUser =3;
+		int minimalnyUser =3;
 		
+		//Klazule select i where
+		Query query = session.createQuery("select userName from UzytkownikDane where userID >"+minimalnyUser);
+		//Query query = session.getNamedQuery("Uzytkownicy");
 		
-		//Query query = session.createQuery("select userName from UzytkownikDane where userID >"+minimalnyUser);
-		Query query = session.getNamedQuery("Uzytkownicy");
+		//Klazula order by
+		//		Query query = session.createQuery("select userName from UzytkownikDane order by userName.userName  ");
 
 		List<String> uzytkownicy = (List<String>) query.list();
 		
