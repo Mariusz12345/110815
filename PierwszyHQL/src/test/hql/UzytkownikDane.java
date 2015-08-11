@@ -2,12 +2,16 @@ package test.hql;
 
 
 
+
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -21,7 +25,18 @@ public class UzytkownikDane {
 	
 	@Column(name ="UserName")
 	private String userName;
-
+	
+	@OneToOne
+	@JoinColumn(name = "idSamochodu")
+	private Samochod samochod;
+	
+	
+	public Samochod getSamochod() {
+		return samochod;
+	}
+	public void setSamochod(Samochod samochod) {
+		this.samochod = samochod;
+	}
 	public Long getUserID() {
 		return userID;
 	}

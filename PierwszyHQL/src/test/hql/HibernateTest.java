@@ -13,12 +13,20 @@ public class HibernateTest {
 	public static void main(String[] args) {
 		
 		UzytkownikDane dane = new UzytkownikDane();
-		dane.setUserName("Patrycja");
+		dane.setUserName("Paulina");
 		
+		Samochod samochod = new Samochod();
+		samochod.setNazwaSamochodu("Fiat");
+		
+		dane.setSamochod(samochod);
+		
+		//Przygotowanie Hibernata
 		SessionFactory sessionfactory = new Configuration().configure().buildSessionFactory();
 		Session session = sessionfactory.openSession();
+		
 		session.beginTransaction();
-		int minimalnyUser =3;
+		
+		//int minimalnyUser =3;
 		
 		
 		//Query query = session.createQuery("select userName from UzytkownikDane where userID >"+minimalnyUser);
@@ -26,7 +34,8 @@ public class HibernateTest {
 
 		List<String> uzytkownicy = (List<String>) query.list();
 		
-		//session.save(dane);
+		session.save(samochod);
+		session.save(dane);
 		session.getTransaction().commit();
 				
 		session.close();
