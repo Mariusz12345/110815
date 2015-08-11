@@ -30,7 +30,7 @@ public class HibernateTest {
 		
 		
 		// select i where
-		//Query query = session.createQuery("select userName from UzytkownikDane where userID >"+minimalnyUser);
+		Query query = session.createQuery("select userName from UzytkownikDane where userID >"+minimalnyUser);
 		//Query query = session.createQuery("select nazwaSamochodu from Samochod ");
 		//Query query = session.getNamedQuery("Uzytkownicy");
 		//Query query = session.createQuery("from UzytkownikDane ");
@@ -44,12 +44,16 @@ public class HibernateTest {
 		//query.setString("newNAme", "zmian");
 		 //query.executeUpdate();
 		
+		//usuwanie
+		//Query query = session.createQuery("delete UzytkownikDane where userName=:userName");
+		//query.setString("userName", "zmian");
+		//query.executeUpdate();
 		
 		
 		
 		//List<UzytkownikDane> uzyDane = (List<UzytkownikDane>) query.list();
 		
-		//List<String> zapisDoListy = (List<String>) query.list();
+		List<String> zapisDoListy = (List<String>) query.list();
 		
 		//session.save(samochod);
 		//session.save(dane);
@@ -59,8 +63,8 @@ public class HibernateTest {
 		session.close();
 		sessionfactory.close();
 				
-		//for(String u : zapisDoListy)
-		//System.out.println("Uzytkownicy: " +u);
+		for(String u : zapisDoListy)
+		System.out.println("Uzytkownicy: " +u);
 		
 		
 		//for(UzytkownikDane d : uzyDane)
